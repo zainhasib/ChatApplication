@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChatPlatformActivity"
+    android:theme="@style/AppTheme">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:titleTextColor="@color/white"
+        app:subtitleTextColor="@color/white"
+        android:background="@color/black2"
+        android:gravity="center_vertical"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="-5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/tay"
+                app:civ_border_width="1dp"
+                app:civ_border_color="#FFFFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/user_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_name"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/last_seen"
+                    android:text="@string/hello_blank_fragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerViewChat"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bottom_l_layout">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:id="@+id/bottom_l_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:weightSum="20"
+            android:gravity="center_vertical">
+
+            <com.libizo.CustomEditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="18"
+                android:layout_margin="5dp"
+                android:padding="10sp"
+                app:libIZO_setBorderColor="@color/black"
+                app:libIZO_setBorderView="true"
+                android:textSize="20sp"
+                app:libIZO_setCornerRadius="20dp"
+                android:foregroundGravity="top"
+                android:drawablePadding="8dp"
+                android:hint="@string/type_message"
+                android:drawableStart="@drawable/ic_insert_emoticon_gray_24dp"
+                android:drawableLeft="@drawable/ic_insert_emoticon_gray_24dp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_check_white_24dp"
+                android:layout_marginEnd="2dp"
+                app:civ_circle_background_color="@color/black"
+                android:layout_marginRight="2dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
